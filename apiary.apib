@@ -37,3 +37,16 @@ GET /performances
     "ticket": "门票价格",
     "tickets_count": 门票数量
 }
+
+--
+City 热门城市
+--
+GET /cities
+< 200
+{ 
+  cities: [
+    #热门城市
+    "北京",
+    "上海"
+  ]
+}
