@@ -1,47 +1,40 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://youyanchu.gaiamagic.com/api
 
-# youyanchu
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+--- API for youyanchu.gaiamagic.com/api ---
 
-# Group Notes
-Notes related resources of the **Notes API**
-
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
+--
+Performance 表演列表
+--
+GET /performances
+< 200
+{
+    "id": 表演列表id,
+    "progress": "状态",
+    "areas": [
+        "河南",
+        "郑州"
+    ],
+    "address": "地址",
+    "genre": "曲风",
+    "kind": "演出类型",
+    "bands_list": "乐队",
+    "title": "表演列表标题",
+    "description": "描述",
+    "begin_at": "2013-11-17T00:00:00+0800",
+    "end_at": "2013-11-17T02:00:00+0800",
+    "city": "城市",
+    "location": "场地",
+    "coordinate": {
+        #坐标
+        "lat": "34.7644",
+        "lng": "113.66924"
+    },
+    "poster": "演出海报(大)",
+    "poster_thumb": "演出海报(小)",
+    "albums_count": 相册数量,
+    "favorites_count": 0,
+    "favorite_id": null,
+    "ticket": "门票价格",
+    "tickets_count": 门票数量
+}
