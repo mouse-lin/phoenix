@@ -5,9 +5,16 @@ HOST: http://youyanchu.gaiamagic.com/api
 --
 Performance 表演列表
 --
+获取所有表演列表
 GET /performances
+// page默认第一页；district默认全国
+{ 
+  page: "页数",
+  district: "城市名字"
+}
 < 200
-{
+[
+  {
     "id": 表演列表id,
     "progress": "状态",
     "areas": [
@@ -36,7 +43,10 @@ GET /performances
     "favorite_id": null,
     "ticket": "门票价格",
     "tickets_count": 门票数量
-}
+  },
+  {  },
+  ...
+]
 
 --
 City 热门城市
@@ -48,5 +58,41 @@ GET /cities
     #热门城市
     "北京",
     "上海"
+  ]
+}
+
+--
+Feature 专题
+--
+获取所有专题，只取权值最高3个专题
+GET /features
+< 200
+[
+  { 
+    id: "专题id",
+    title: "专题标题",
+    description: "专题描述",
+    banner_small: "专题小图片",
+    banner: "专题大横幅",
+  },
+  { },
+  ...
+]
+
+单个专题展示,(id放于URL后)
+GET /features/:id
+< 200
+{ 
+  id: "专题id",
+  title: "专题标题",
+  description: "专题描述",
+  banner_small: "专题小图片",
+  banner: "专题大横幅",
+  performances: [
+    { 
+      //具体参考 /performances 里面参数返回
+    },
+    {  },
+    ...
   ]
 }
