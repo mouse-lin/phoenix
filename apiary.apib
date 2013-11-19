@@ -105,17 +105,16 @@ weibo登录, 记得带
 POST /fans/sns_login
 { 
   uid: uid,
-  name: name,
+  nickname: nickname,
   avatar: avatar,
   token: token,
-  secret: secret,
   provider: provider
 }
 < 200
 { 
   success: true,
   id: 用户id,
-  name: 用户姓名,
+  nickname: 用户姓名,
   auth_token: 登录token,
   email: 用户email,
   avatar: 用户头像
