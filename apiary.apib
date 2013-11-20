@@ -123,7 +123,7 @@ POST /fans/sns_login
 {{ "success": false, "message": "uid or provider must be provide" }, "status": 400 }
 
 获取用户信息
-GET /api/fans/profile
+GET /fans/profile
 { 
   auth_token: 用户token
 }
@@ -144,7 +144,7 @@ Follow 关注
 --
 关注列表
 
-GET /api/follows
+GET /follows
 每页返回10条数据
 { 
   page: 页码,
@@ -157,7 +157,7 @@ GET /api/follows
 
 想去
 
-POST /api/follows/want
+POST /follows/want
 { 
   performance_id: 演出id
 }
@@ -167,7 +167,7 @@ POST /api/follows/want
 { success: false, message: "验证不通过", errors: { "具体信息" } }
 
 删除想去
-DELETE /api/follows/want
+DELETE /follows/want
 { 
   performance_id: 演出id
 }
@@ -178,7 +178,7 @@ DELETE /api/follows/want
 
 感兴趣
 
-POST /api/follows/interest
+POST /follows/interest
 { 
   performance_id: 演出id
 }
@@ -188,7 +188,7 @@ POST /api/follows/interest
 { success: false, message: "验证不通过", errors: { "具体信息" } }
 
 删除感兴趣
-DELETE /api/follows/interest
+DELETE /follows/interest
 { 
   performance_id: 演出id
 }
