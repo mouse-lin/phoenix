@@ -121,3 +121,80 @@ POST /fans/sns_login
 }
 //登录失败
 {{ "success": false, "message": "uid or provider must be provide" }, "status": 400 }
+
+获取用户信息
+GET /api/fans/profile
+{ 
+  auth_token: 用户token
+}
+< 200
+{ 
+  nickname: nickname,
+  area: [用户地址],
+  biography: 个人介绍，
+  cellphone: 电话,
+  gender: "男" or "女",
+  avatar: avatar
+}
+
+--
+Follow 关注
+
+关注所有api都需要用户登录(auth_token)
+--
+关注列表
+
+GET /api/follows
+每页返回10条数据
+{ 
+  page: 页码,
+}
+< 200
+[
+  { //具体参考 /performances 里面参数返回  },
+  ...
+]
+
+想去
+
+POST /api/follows/want
+{ 
+  performance_id: 演出id
+}
+< 200
+{ success: true }
+//失败 
+{ success: false, message: "验证不通过", errors: { "具体信息" } }
+
+删除想去
+DELETE /api/follows/want
+{ 
+  performance_id: 演出id
+}
+< 200
+{ success: true }
+//失败 
+{ success: false }
+
+感兴趣
+
+POST /api/follows/interest
+{ 
+  performance_id: 演出id
+}
+< 200
+{ success: true }
+//失败 
+{ success: false, message: "验证不通过", errors: { "具体信息" } }
+
+删除感兴趣
+DELETE /api/follows/interest
+{ 
+  performance_id: 演出id
+}
+< 200
+{ success: true }
+//失败 
+{ success: false }
+
+
