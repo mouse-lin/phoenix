@@ -1,6 +1,13 @@
-HOST: http://youyanchu.gaiamagic.com/api
+HOST: http://youyanchu.gaiamagic.com/api/v1
 
 --- API youyanchu.gaiamagic.com ---
+---
+
+当前API版本为v1，所以在url都必须加上去v1
+
+用户登录后auth_token校验放在http header传过来，HTTP_X_USER_ACCESS_TOKEN: auth_token
+
+---
 
 --
 Performance 表演列表
@@ -100,7 +107,7 @@ GET /features/:id
 --
 User 用户
 --
-weibo登录, 记得带
+weibo登录
 
 POST /fans/sns_login
 { 
@@ -140,7 +147,7 @@ GET /fans/profile
 --
 Follow 关注
 
-关注所有api都需要用户登录(auth_token)
+关注所有api都需要用户登录(auth_token), 具体参考最上面用户登录auth_token参数校验
 --
 关注列表
 
