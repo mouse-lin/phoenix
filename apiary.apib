@@ -6,7 +6,7 @@ HOST: http://youyanchu.gaiamagic.com/api/v1
 
 当前 API 版本为 `v1`
 
-完整访问地址：`http://<web_site>/<version>/<api>`，例如：`http://youyanchu.com/api/v1/performances`
+完整访问地址：`http://<web_site>/api/<version>/<resource>`，例如：`http://youyanchu.com/api/v1/performances`
 
 ## Token
 
@@ -210,4 +210,32 @@ DELETE /follows/interest
 //失败 
 { success: false }
 
+--
+Order 订单
 
+此类别下的所有接口都需要用户登录
+--
+
+创建订单
+
+POST /orders
+{
+  quantity: 10, // 票数
+  cellphone: '13412345678',
+  ticket_setting_id: 1, // 票务类型id
+  performance_id: 2 //
+}
+< 200
+{
+  id: 1,
+  masked_cellphone: '13412345678',
+  quantity: 10,
+  total: '100.00',
+  status: 'unpain',
+  number: 'b326646e3a95156c7271', // 订单号
+  is_buyable: true,
+  created_at: '2014-01-07T15:21:00+08:00',
+  updated_at: '2014-01-07T15:21:00+08:00',
+  expired_at: '2014-01-07T15:21:00+08:00',
+  paid_at: null // 未付款时为null
+}
