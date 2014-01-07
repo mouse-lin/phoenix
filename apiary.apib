@@ -1,12 +1,16 @@
 HOST: http://youyanchu.gaiamagic.com/api/v1
 
---- API youyanchu.gaiamagic.com ---
+--- API for youyanchu.com ---
 ---
+## API 地址
 
-当前API版本为v1，所以在url都必须加上去v1
+当前 API 版本为 `v1`
 
-用户登录后auth_token校验放在http header传过来，HTTP-X-USER-ACCESS-TOKEN: auth_token
+完整访问地址：`http://<web_site>/<version>/<api>`，例如：`http://youyanchu.com/api/v1/performances`
 
+## Token
+
+Token 需要通过 http header 的 `X-USER-ACCESS-TOKEN` 发送
 ---
 
 --
