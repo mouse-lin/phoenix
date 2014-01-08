@@ -207,7 +207,10 @@ POST /fans/sns_login
   nickname: 用户姓名,
   auth_token: 登录token,
   email: 用户email,
-  avatar: 用户头像
+  avatar: 用户头像,
+  sms_notification: true| false(短信通知),
+  email_notification: true| false(邮箱通知),
+  app_notification: true| false(app 通知)
 }
 //登录失败
 {{ "success": false, "message": "uid or provider must be provide" }, "status": 400 }
