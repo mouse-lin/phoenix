@@ -238,24 +238,6 @@ GET /orders
   }
 ]
 
-查询登录用户的订单
-
-GET /orders/:order_id
-< 200
-{
-  id: 1,
-  masked_cellphone: '13412345678',
-  quantity: 10,
-  total: '100.00',
-  status: 'unpain',
-  number: 'b326646e3a95156c7271', // 订单号
-  is_buyable: true,
-  created_at: '2014-01-07T15:21:00+08:00',
-  updated_at: '2014-01-07T15:21:00+08:00',
-  expired_at: '2014-01-07T15:21:00+08:00',
-  paid_at: null // 未付款时为null
-}
-
 创建订单
 
 POST /orders
