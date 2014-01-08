@@ -238,7 +238,7 @@ GET /orders
   }
 ]
 
-查询订单
+查询登录用户的订单
 
 GET /orders/:order_id
 < 200
@@ -278,4 +278,51 @@ POST /orders
   updated_at: '2014-01-07T15:21:00+08:00',
   expired_at: '2014-01-07T15:21:00+08:00',
   paid_at: null // 未付款时为null
+}
+
+--
+Address 配送地址
+
+此类别下的所有接口都需要用户登录
+--
+
+登录用户的配送地址列表
+
+GET /addresses
+< 200
+[
+  {
+    recipient: '收件人',
+    cellphone: '13811111111',
+    destination: '地址',
+    zipcode: '邮政编码'
+  }
+]
+
+查询登录用户的配送地址
+
+GET /addresses/:address_id
+< 200
+{
+  recipient: '收件人',
+  cellphone: '13811111111',
+  destination: '地址',
+  zipcode: '邮政编码'
+}
+
+创建配送地址
+
+POST /addresses
+{
+  recipient: '收件人',
+  cellphone: '13811111111',
+  destination: '地址',
+  zipcode: '邮政编码'
+}
+< 200
+{
+  recipient: '收件人',
+  cellphone: '13811111111',
+  destination: '地址',
+  zipcode: '邮政编码'
 }
