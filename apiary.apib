@@ -301,8 +301,7 @@ POST /orders
 {
   quantity: 10, // 票数
   cellphone: '13412345678',
-  ticket_setting_id: 1, // 票务类型id
-  performance_id: 2 //
+  ticket_setting_id: 1 // 票务类型id
 }
 < 200
 {
@@ -365,3 +364,8 @@ POST /addresses
   destination: '地址',
   zipcode: '邮政编码'
 }
+
+删除登录用户的配送地址
+
+DELETE /addresses/:address_id
+< 204
