@@ -273,7 +273,7 @@ Order 订单
 此类别下的所有接口都需要用户登录
 --
 
-订单列表
+登录用户的订单列表
 
 `status` 参数可能的值为 `unpaid` `paid` `expired`  
 如果不设置此值，则表示获取所有订单
@@ -284,6 +284,7 @@ GET /orders
     id: 1,
     masked_cellphone: '13412345678',
     quantity: 10,
+    price: '10.00',
     total: '100.00',
     status: 'unpain',
     number: 'b326646e3a95156c7271', // 订单号
@@ -295,19 +296,15 @@ GET /orders
   }
 ]
 
-创建订单
+查询登录用户的订单
 
-POST /orders
-{
-  quantity: 10, // 票数
-  cellphone: '13412345678',
-  ticket_setting_id: 1 // 票务类型id
-}
+GET /orders/:order_id
 < 200
 {
   id: 1,
   masked_cellphone: '13412345678',
   quantity: 10,
+  price: '10.00',
   total: '100.00',
   status: 'unpain',
   number: 'b326646e3a95156c7271', // 订单号
@@ -315,7 +312,40 @@ POST /orders
   created_at: '2014-01-07T15:21:00+08:00',
   updated_at: '2014-01-07T15:21:00+08:00',
   expired_at: '2014-01-07T15:21:00+08:00',
-  paid_at: null // 未付款时为null
+  paid_at: null, // 未付款时为null
+  ticket_numbers: [
+    '5255167707',
+    '7693752915'
+  ]
+}
+
+创建订单
+
+POST /orders
+{
+  quantity: 10, // 票数
+  cellphone: '13412345678',
+  ticket_setting_id: 1, // 票务类型id
+  address_id: 2 // 如果购买的是实体票，需要传入配送地址
+}
+< 200
+{
+  id: 1,
+  masked_cellphone: '13412345678',
+  quantity: 10,
+  price: '10.00',
+  total: '100.00',
+  status: 'unpain',
+  number: 'b326646e3a95156c7271', // 订单号
+  is_buyable: true,
+  created_at: '2014-01-07T15:21:00+08:00',
+  updated_at: '2014-01-07T15:21:00+08:00',
+  expired_at: '2014-01-07T15:21:00+08:00',
+  paid_at: null, // 未付款时为null
+  ticket_numbers: [
+    '5255167707',
+    '7693752915'
+  ]
 }
 
 --
