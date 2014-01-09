@@ -14,19 +14,19 @@ Token 需要通过 http header 的 `X-USER-ACCESS-TOKEN` 发送
 ---
 
 --
-Performance 表演列表
+Performance 演出列表
 --
-获取所有表演列表
+
+获取所有演出列表
 GET /performances
-// page默认第一页；district默认全国
 { 
-  page: "页数",
-  district: "城市名字"
+  page: "页数", // 默认为1
+  district: "城市名字" // 默认为"全国"
 }
 < 200
 [
   {
-    "id": 表演列表id,
+    "id": 演出列表id,
     "progress": "状态",
     "areas": [
         "河南",
@@ -36,14 +36,14 @@ GET /performances
     "genre": "曲风",
     "kind": "演出类型",
     "bands_list": "乐队",
-    "title": "表演列表标题",
+    "title": "演出列表标题",
     "description": "描述",
     "begin_at": "开始时间",
     "end_at": "结束时间",
     "city": "城市",
     "location": "场地",
     "coordinate": {
-        #坐标
+        // 坐标
         "lat": "34.7644",
         "lng": "113.66924"
     },
@@ -61,62 +61,55 @@ GET /performances
   ...
 ]
 
---
-Performance 表演详情
---
+获取某个演出
 GET /performances/:id
 < 200
-[
-  {
-    "id": 表演列表id,
-    "progress": "状态",
-    "areas": [
-        "河南",
-        "郑州"
-    ],
-    "address": "地址",
-    "genre": "曲风",
-    "kind": "演出类型",
-    "bands_list": "乐队",
-    "title": "表演列表标题",
-    "description": "描述",
-    "begin_at": "开始时间",
-    "end_at": "结束时间",
-    "city": "城市",
-    "location": "场地",
-    "coordinate": {
-        #坐标
-        "lat": "34.7644",
-        "lng": "113.66924"
-    },
-    "poster": "演出海报(大)",
-    "poster_thumb": "演出海报(小)",
-    "albums_count": 相册数量,
-    "favorites_count": 0,
-    "favorite_id": null,
-    "ticket": "门票价格",
-    "tickets_count": 门票数量,
-    "is_want": 是否想去(true : false),
-    "is_interested": 是否感兴趣(true : false),
-    "ticket_settings": [
-      { 
-        "begin_at": "开始时间",
-        "custom_link": "链接",
-        "end_at": "结束时间",
-        "id": id,
-        "name": 名称("现场票"),
-        "note": "",
-        "performance_id": 演出id,
-        "price": 价格,
-        "tickets_count": 票数量
-      },
-      {  },
-      ...
-    ]
+{
+  "id": 演出列表id,
+  "progress": "状态",
+  "areas": [
+      "河南",
+      "郑州"
+  ],
+  "address": "地址",
+  "genre": "曲风",
+  "kind": "演出类型",
+  "bands_list": "乐队",
+  "title": "演出列表标题",
+  "description": "描述",
+  "begin_at": "开始时间",
+  "end_at": "结束时间",
+  "city": "城市",
+  "location": "场地",
+  "coordinate": {
+      #坐标
+      "lat": "34.7644",
+      "lng": "113.66924"
   },
-  {  },
-  ...
-]
+  "poster": "演出海报(大)",
+  "poster_thumb": "演出海报(小)",
+  "albums_count": 相册数量,
+  "favorites_count": 0,
+  "favorite_id": null,
+  "ticket": "门票价格",
+  "tickets_count": 门票数量,
+  "is_want": 是否想去(true : false),
+  "is_interested": 是否感兴趣(true : false),
+  "ticket_settings": [
+    {
+      id: 8,
+      name: "票名",
+      quota: 20, // 剩余票数，当为null时表示不限票数
+      price: 9.9, // 单位：元
+      note: "备注",
+      kind: "electronic", // 票务类型，electronic: 电子票，entity: 实体票
+      begin_at: "2014-01-07T10:47:00+08:00",
+      end_at: "2014-01-25T00:00:00+08:00"
+    },
+    { },
+    ...
+  ]
+}
 
 --
 City 热门城市
