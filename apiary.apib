@@ -95,6 +95,7 @@ GET /performances/:id
   "tickets_count": 门票数量,
   "is_want": 是否想去(true : false),
   "is_interested": 是否感兴趣(true : false),
+  "date_window": [ "2014-01-29", "2014-01-30" ], // 演出日期段
   "ticket_settings": [
     {
       id: 8,
@@ -103,8 +104,10 @@ GET /performances/:id
       price: 9.9, // 单位：元
       note: "备注",
       kind: "electronic", // 票务类型，electronic: 电子票，entity: 实体票
-      begin_at: "2014-01-07T10:47:00+08:00",
-      end_at: "2014-01-25T00:00:00+08:00"
+      is_bundle: false, // 是否套票
+      available_date: "2014-01-29", // 门票使用日期，非套票时才有这个字段
+      begin_at: "2014-01-07T10:47:00+08:00", // 售票开始时间
+      end_at: "2014-01-25T00:00:00+08:00" // 售票结束时间
     },
     { },
     ...
