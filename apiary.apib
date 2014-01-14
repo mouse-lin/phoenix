@@ -82,7 +82,7 @@ GET /performances/:id
   "city": "城市",
   "location": "场地",
   "coordinate": {
-      #坐标
+      // 坐标
       "lat": "34.7644",
       "lng": "113.66924"
   },
@@ -282,13 +282,15 @@ GET /orders
     quantity: 10,
     price: '10.00',
     total: '100.00',
-    status: 'unpain',
+    status: 'unpaid', // unpaid: 未付款, paid: 已付款, refunding: 退款中, refunded: 已退款, expired: 已结束
     number: 'b326646e3a95156c7271', // 订单号
     is_buyable: true,
     created_at: '2014-01-07T15:21:00+08:00',
     updated_at: '2014-01-07T15:21:00+08:00',
-    expired_at: '2014-01-07T15:21:00+08:00',
-    paid_at: null // 未付款时为null
+    expired_at: '2014-01-07T15:51:00+08:00',
+    paid_at: ''      // 付款后才有此字段
+    refunding_at: '' // 正在退款中才有此字段
+    refunded_at: ''  // 退款后才有此字段
   }
 ]
 
@@ -302,13 +304,15 @@ GET /orders/:order_id
   quantity: 10,
   price: '10.00',
   total: '100.00',
-  status: 'unpain',
+  status: 'unpaid',
   number: 'b326646e3a95156c7271', // 订单号
   is_buyable: true,
   created_at: '2014-01-07T15:21:00+08:00',
   updated_at: '2014-01-07T15:21:00+08:00',
-  expired_at: '2014-01-07T15:21:00+08:00',
-  paid_at: null, // 未付款时为null
+  expired_at: '2014-01-07T15:51:00+08:00',
+  paid_at: ''      // 付款后才有此字段
+  refunding_at: '' // 正在退款中才有此字段
+  refunded_at: ''  // 退款后才有此字段
   ticket_numbers: [
     '5255167707',
     '7693752915'
@@ -331,17 +335,13 @@ POST /orders
   quantity: 10,
   price: '10.00',
   total: '100.00',
-  status: 'unpain',
+  status: 'unpaid',
   number: 'b326646e3a95156c7271', // 订单号
   is_buyable: true,
   created_at: '2014-01-07T15:21:00+08:00',
   updated_at: '2014-01-07T15:21:00+08:00',
-  expired_at: '2014-01-07T15:21:00+08:00',
-  paid_at: null, // 未付款时为null
-  ticket_numbers: [
-    '5255167707',
-    '7693752915'
-  ]
+  expired_at: '2014-01-07T15:51:00+08:00',
+  ticket_numbers: ['5255167707', '7693752915']
 }
 
 --
