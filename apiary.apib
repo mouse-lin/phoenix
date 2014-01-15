@@ -425,3 +425,48 @@ POST /addresses
 
 DELETE /addresses/:address_id
 < 204
+
+--
+用户设置
+
+接口都需要用户登录
+--
+
+邮箱绑定
+
+POST /fans/set_email
+{ 
+  email: '邮箱'
+}
+< 204
+
+取消通知设置
+
+DELETE /fans/notification
+{ 
+  type: "sms" || "app" || "email" (三个类型选择一个)
+}
+< 204
+
+重新发送邮箱邮件验证
+
+POST /fans/resend_confirmation_instructions
+< 204
+
+手机通知设置
+
+POST /fans/set_phone
+< 204
+
+重新发送手机验证码
+
+POST /fans/resend_verification_token
+< 204
+
+验证码确认
+
+POST /fans/verify_phone_token
+{ 
+  phone_token: "手机验证码"
+}
+< 204
