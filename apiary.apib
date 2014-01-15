@@ -114,6 +114,30 @@ GET /performances/:id
   ]
 }
 
+获取要去某个演出的用户
+GET /performances/:performance_id/interested_fans
+{
+  type: 'followed', // (可选, 只返回登录用户已关注的Fans)
+  page: 1,
+  per: 10
+}
+< 200
+[
+  { // 数据参考Fan }
+]
+
+获取对某个演出感兴趣的用户
+GET /performances/:performance_id/interested_fans
+{
+  type: 'followed', // (可选, 只返回登录用户已关注的Fans)
+  page: 1,
+  per: 10
+}
+< 200
+[
+  { // 数据参考Fan }
+]
+
 --
 City 热门城市
 --
