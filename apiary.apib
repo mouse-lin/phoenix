@@ -271,9 +271,12 @@ Order 订单
 
 登录用户的订单列表
 
-`status` 参数可能的值为 `unpaid` `paid` `expired`  
-如果不设置此值，则表示获取所有订单
 GET /orders
+{
+  // `status` 参数可能的值为 `unpaid` `paid` `expired` `refunding` `refunded`
+  // 如果不设置此值，则表示获取所有订单
+  status: 'unpaid'
+}
 < 200
 [
   {
