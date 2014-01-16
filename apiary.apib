@@ -50,10 +50,13 @@ GET /performances
     "poster": "演出海报(大)",
     "poster_thumb": "演出海报(小)",
     "albums_count": 相册数量,
-    "favorites_count": 0,
+    "favorites_count": 收藏人数,
+    "tickets_count": 门票数量,
+    "wants_count": 感兴趣人数,
+    "interests_count": 要去的人数,
+    "friends_count": 好友关注数,
     "favorite_id": null,
     "ticket": "门票价格",
-    "tickets_count": 门票数量,
     "is_want": 是否想去(true : false),
     "is_interested": 是否感兴趣(true : false)
   },
@@ -89,10 +92,13 @@ GET /performances/:id
   "poster": "演出海报(大)",
   "poster_thumb": "演出海报(小)",
   "albums_count": 相册数量,
-  "favorites_count": 0,
+  "favorites_count": 收藏人数,
+  "tickets_count": 门票数量,
+  "wants_count": 感兴趣人数,
+  "interests_count": 要去的人数,
+  "friends_count": 好友关注数,
   "favorite_id": null,
   "ticket": "门票价格",
-  "tickets_count": 门票数量,
   "is_want": 是否想去(true : false),
   "is_interested": 是否感兴趣(true : false),
   "date_window": [ "2014-01-29", "2014-01-30" ], // 演出日期段
@@ -427,7 +433,7 @@ DELETE /addresses/:address_id
 < 204
 
 --
-用户设置
+Setting 用户设置
 
 接口都需要用户登录
 --
