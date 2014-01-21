@@ -317,9 +317,18 @@ GET /orders
     created_at: '2014-01-07T15:21:00+08:00',
     updated_at: '2014-01-07T15:21:00+08:00',
     expired_at: '2014-01-07T15:51:00+08:00',
-    paid_at: ''      // 付款后才有此字段
-    refunding_at: '' // 正在退款中才有此字段
-    refunded_at: ''  // 退款后才有此字段
+    paid_at: '',      // 付款后才有此字段
+    refunding_at: '', // 正在退款中才有此字段
+    refunded_at: '',  // 退款后才有此字段
+    ticket_setting: {
+      id: 2,
+      available_at: '2014-01-07T15:21:00+08:00'
+    },
+    performance: {
+      id: 1,
+      title: 'title',
+      poster: 'poster url'
+    }
   }
 ]
 
@@ -345,7 +354,16 @@ GET /orders/:order_id
   ticket_numbers: [
     '5255167707',
     '7693752915'
-  ]
+  ],
+  ticket_setting: {
+    id: 2,
+    available_at: '2014-01-07T15:21:00+08:00'
+  },
+  performance: {
+    id: 1,
+    title: 'title',
+    poster: 'poster url'
+  }
 }
 
 创建订单
