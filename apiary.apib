@@ -480,6 +480,15 @@ POST /fan/setting/verify_phone_token
 }
 < 204
 
+查询知设置
+GET /fan/setting/notifications
+< 200
+{
+  app_notification: true,
+  sms_notification: true,
+  email_notification: true
+}
+
 修改知设置
 PUT /fan/setting/notifications
 {
