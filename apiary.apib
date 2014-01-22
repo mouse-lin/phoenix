@@ -322,7 +322,10 @@ GET /orders
     refunded_at: '',  // 退款后才有此字段
     ticket_setting: {
       id: 2,
-      available_at: '2014-01-07T15:21:00+08:00'
+      name: '票名',
+      kind: "electronic", // 票务类型，electronic: 电子票，entity: 实体票
+      is_bundle: false,   // 是否套票
+      available_at: '2014-01-07T15:21:00+08:00' // 门票使用时间，非套票时才有这个字段
     },
     performance: {
       id: 1,
@@ -357,7 +360,10 @@ GET /orders/:order_id
   ],
   ticket_setting: {
     id: 2,
-    available_at: '2014-01-07T15:21:00+08:00'
+    name: '票名',
+    kind: "electronic", // 票务类型，electronic: 电子票，entity: 实体票
+    is_bundle: false,   // 是否套票
+    available_at: '2014-01-07T15:21:00+08:00' // 门票使用时间，非套票时才有这个字段
   },
   performance: {
     id: 1,
