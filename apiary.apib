@@ -507,3 +507,24 @@ PUT /fan/setting/notifications
   sms_notification: true,
   email_notification: true
 }
+
+--
+Musician 音乐人
+
+--
+
+获取所有音乐人
+GET /musicians
+{ 
+  query: "搜索条件(姓名检索)"
+}
+< 200
+{ 
+  avatar: "头像",
+  name: "姓名",
+  followed: true | false ("是否已经关注，若没有登录，全部为false")
+}
+
+关注音乐人(需要用户登录)
+POST /musicians/:musician_id/follow
+< 204
