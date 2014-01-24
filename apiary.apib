@@ -372,6 +372,11 @@ GET /orders/:order_id
   }
 }
 
+获取订单的支付宝WAP支付地址
+GET /orders/:order_id/alipay_wap
+< 200
+{ url: 'xxx' }
+
 创建订单
 
 POST /orders
@@ -480,7 +485,7 @@ POST /fan/setting/verify_phone_token
 }
 < 204
 
-查询知设置
+查询通知设置
 GET /fan/setting/notifications
 < 200
 {
