@@ -525,6 +525,13 @@ GET /musicians
   followed: true | false ("是否已经关注，若没有登录，全部为false")
 }
 
+关注音乐人列表(需要用户登录)
+GET /musicians/followed_list
+< 200
+{ 
+  返回类型参考musicians
+}
+
 关注音乐人(需要用户登录)
 POST /musicians/:musician_id/follow
 < 204
