@@ -487,7 +487,10 @@ POST /fan/setting/verify_phone_token
 { 
   token: "手机验证码"
 }
-< 204
+< 200
+{
+  cellphone: "新手机号码"
+}
 
 查询通知设置
 GET /fan/setting/notifications
