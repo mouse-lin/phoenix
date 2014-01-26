@@ -520,6 +520,7 @@ GET /musicians
 }
 < 200
 { 
+  id: id
   avatar: "头像",
   name: "姓名",
   followed: true | false ("是否已经关注，若没有登录，全部为false")
@@ -534,4 +535,8 @@ GET /musicians/followed_list
 
 关注音乐人(需要用户登录)
 POST /musicians/:musician_id/follow
+< 204
+
+取消关注音乐人(需要用户登录)
+DELETE /musicians/:musician_id/follow
 < 204
