@@ -305,7 +305,7 @@ GET /orders
 {
   // `status` 参数可能的值为 `unpaid` `paid` `expired` `refunding` `refunded`
   // 如果不设置此值，则表示获取所有订单
-  status: 'unpaid'
+  status: 'unpaid' // 也可以传入数据来表示多种状态： ['unpaid', 'paid']
 }
 < 200
 [
