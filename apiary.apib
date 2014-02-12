@@ -59,7 +59,8 @@ GET /performances
     "favorite_id": null,
     "ticket": "门票价格",
     "is_want": 是否想去(true : false),
-    "is_interested": 是否感兴趣(true : false)
+    "is_interested": 是否感兴趣(true : false),
+    "with_limited_tickets": true // 是否有抢票的票务设置
   },
   {  },
   ...
@@ -111,7 +112,8 @@ GET /performances/:id
       price: 9.9, // 单位：元
       note: "备注",
       kind: "electronic", // 票务类型，electronic: 电子票，entity: 实体票
-      is_bundle: false, // 是否套票
+      is_bundle: false,   // 是否套票
+      is_limited_version, // 是否抢票
       available_at: "2014-01-25T00:00:00+08:00", // 门票使用时间，非套票时才有这个字段
       begin_at: "2014-01-07T10:47:00+08:00", // 售票开始时间
       end_at: "2014-01-25T00:00:00+08:00" // 售票结束时间
