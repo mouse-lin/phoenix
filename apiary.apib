@@ -28,10 +28,7 @@ GET /performances
   {
     "id": 演出列表id,
     "progress": "状态",
-    "areas": [
-        "河南",
-        "郑州"
-    ],
+    "areas": [ "河南", "郑州" ],
     "address": "地址",
     "genre": "曲风",
     "kind": "演出类型",
@@ -335,6 +332,9 @@ GET /orders
     performance: {
       id: 1,
       title: 'title',
+      areas: ['广东', '广州'],
+      begin_at: "开始时间",
+      location: "场地",
       poster: 'poster url',
       contact_phone: '票务联系电话'
     }
@@ -374,6 +374,9 @@ GET /orders/:order_id
   performance: {
     id: 1,
     title: 'title',
+    areas: ['广东', '广州'],
+    begin_at: "开始时间",
+    location: "场地",
     poster: 'poster url',
     contact_phone: '票务联系电话'
   }
