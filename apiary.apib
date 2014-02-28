@@ -39,15 +39,6 @@ GET /performances
     "end_at": "结束时间",
     "city": "城市",
     "location": "场地",
-    "coordinate": {
-        // 坐标
-        "lat": "34.7644",
-        "lng": "113.66924"
-    },
-    "musicians": [
-      { //具体参考musicians返回 },
-      {  }
-    ]
     "poster": "演出海报(大)",
     "poster_thumb": "演出海报(小)",
     "albums_count": 相册数量,
@@ -60,7 +51,22 @@ GET /performances
     "ticket": "门票价格",
     "is_wanted": 是否想去(true : false),
     "is_interested": 是否感兴趣(true : false),
-    "with_limited_tickets": true // 是否有抢票的票务设置
+    "with_limited_tickets": true, // 是否有抢票的票务设置
+    "coordinate": {
+        // 坐标
+        "lat": "34.7644",
+        "lng": "113.66924"
+    },
+    "musicians": [
+      { //具体参考musicians返回 },
+      {  }
+    ],
+    "timetables": [
+      {
+        begin_at: "2014-03-01T18:00:00+08:00",
+        end_at: "2014-03-01T21:00:00+08:00"
+      }
+    ]
   },
   {  },
   ...
@@ -103,7 +109,12 @@ GET /performances/:id
   "ticket": "门票价格",
   "is_wanted": 是否想去(true : false),
   "is_interested": 是否感兴趣(true : false),
-  "tickets_date_window": [ "2014-01-29", "2014-01-30" ], // 演出日期段
+  "timetables": [
+    {
+      begin_at: "2014-03-01T18:00:00+08:00",
+      end_at: "2014-03-01T21:00:00+08:00"
+    }
+  ],
   "ticket_settings": [
     {
       id: 8,
