@@ -529,7 +529,7 @@ Musician 音乐人
 
 --
 
-获取所有音乐人
+获取音乐人列表
 GET /musicians
 { 
   query: "搜索条件(姓名检索)"
@@ -537,10 +537,22 @@ GET /musicians
 < 200
 { 
   id: id
-  avatar: "头像",
+  avatar: "头像url",
   name: "姓名",
-  followed: true | false ("是否已经关注，若没有登录，全部为false")
+  followed: true
 }
+
+获取推荐音乐人
+GET /musicians/recommended
+< 200
+[
+  { 
+    id: id
+    avatar: "头像url",
+    name: "姓名",
+    followed: true
+  }
+]
 
 关注音乐人列表(需要用户登录)
 GET /musicians/followed_list
