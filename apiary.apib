@@ -559,6 +559,9 @@ GET /musicians
 
 获取推荐音乐人
 GET /musicians/recommended
+{
+  type: 'unfollowing' // 只返回登录用户未关注的
+}
 < 200
 [
   { 
