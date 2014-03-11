@@ -11,6 +11,10 @@ HOST: http://youyanchu.gaiamagic.com/api/v1
 ## Token
 
 Token 需要通过 http header 的 `X-USER-ACCESS-TOKEN` 发送
+
+## 分页
+多页 (读取数据列表) 时分页参数为： 页码（默认为 1）：page，每页记录数量（默认为 10）：per  
+建议对分页参数显式传值，以免后期默认值可能会修改。
 ---
 
 --
@@ -32,11 +36,11 @@ GET /performances
     "address": "地址",
     "genre": "曲风",
     "kind": "演出类型",
-    "bands_list": "乐队",
+    "bands_list": "乐队",   // 过时字段，应该改为使用musicians
     "title": "演出列表标题",
     "description": "描述",
-    "begin_at": "开始时间",
-    "end_at": "结束时间",
+    "begin_at": "开始时间", // 过时字段，应该改为使用timetables
+    "end_at": "结束时间",,  // 过时字段，应该改为使用timetables
     "city": "城市",
     "location": "场地",
     "poster": "演出海报(大)",
