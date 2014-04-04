@@ -15,6 +15,24 @@ Token 需要通过 http header 的 `X-USER-ACCESS-TOKEN` 发送
 ## 分页
 多页（读取数据列表）时分页参数为： 页码（默认为 1）：page，每页记录数量（默认为 20）：per  
 建议对分页参数显式传值，以免后期默认值可能会修改。
+
+## 客户端错误
+一般有以下几种情况：
+
+400, 401, 403, 404 格式都是：
+
+    { message: 'error message' }
+
+422 错误格式是：（注意：针对不同的API对应的字段名会不同，这里name, email只是举例）
+
+    {
+      message: '验证不通过',
+      errors: {
+        name: { message: '不能为空' },
+        email: { message: '无效的邮箱地址' },
+        ...
+      }
+    }
 ---
 
 --
